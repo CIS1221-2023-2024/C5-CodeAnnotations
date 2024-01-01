@@ -1,6 +1,6 @@
 import java.util.*;
 class parent{
-    public void override() {
+    public void override(){
         System.out.println("Hello parent!");
     }
 }
@@ -19,7 +19,7 @@ class deprecated{
     }
 }
 
-class SuppressWarning {
+class SuppressWarning{
 @SuppressWarnings("unchecked")
     public void unchecked() {
         List myList = new ArrayList();
