@@ -5,16 +5,16 @@
 This repository explores the use of code annotations, specifically attributes, decorators, and assertions, in Java and Python. The concepts will be demonstrated in the context of a calculator implementation in each language.
 
 ## Table of Contents
-- [Introduction]
-- [Calculator Implementation]
-  - [Attributes]
-  - [Decorators]
-  - [Assertions]
-- [Considerations]
-  -[Computational Complexity]
-  -[Execution Time]
-  -[Examples of Code]
-  -[Standard Library vs Ad-hoc Implementations]
+- [Introduction](#introduction)
+- [Calculator Implementations](#calculator-implementations)
+  - [Attributes](#attributes)
+  - [Decorators](#decorators)
+  - [Assertions](#assertions)
+- [Considerations](#considerations)
+  - [Computational Complexity](#computational-complexity)
+  - [Execution Time](#execution-time)
+  - [Examples of Code](#examples-of-code)
+  - [Standard Library vs Ad-hoc Implementations](#standard-library-vs-ad-hoc-implementations)
 
 ## Introduction
 Code annotations are powerful features in programming languages that allow developers to add metadata or modify behavior to their code. In this repository, we focus on attributes, decorators, and assertions in Java and Python. The implementations of these concepts are showcased in a calculator application written by Ryan in Java and Julian in Python.
