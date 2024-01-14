@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
+import Calculator.*;
+import Operations.*;
 
 // Class for the main program
 class CalculatorMain {
@@ -19,6 +21,7 @@ class CalculatorMain {
             System.out.println("2. Subtraction");
             System.out.println("3. Multiplication");
             System.out.println("4. Division");
+            System.out.println("6. Power");
             System.out.println("5. Random Number Stress Test");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
@@ -47,6 +50,9 @@ class CalculatorMain {
                     operation = new DivideOperation();
                     break;
                 case 5:
+                    operation = new PowerOperation();
+                    break;
+                case 6:
                     randomStressTest();
                     continue; // Skips the rest of the loop for stress test
                 default:
@@ -99,15 +105,17 @@ class CalculatorMain {
             Calculator subtractOperation = new SubtractOperation();
             Calculator multiplyOperation = new MultiplyOperation();
             Calculator divideOperation = new DivideOperation();
+            Calculator powerOperation = new PowerOperation();
 
             // Prints the results
             System.out.println("Addition result: " + addOperation.calculate(num1, num2));
             System.out.println("Subtraction result: " + subtractOperation.calculate(num1, num2));
             System.out.println("Multiplication result: " + multiplyOperation.calculate(num1, num2));
             System.out.println("Division result: " + divideOperation.calculate(num1, num2));
+            System.out.println("Power result: " + powerOperation.calculate(num1, num2));
 
             // Update the calculation count
-            calculationCount += 4;
+            calculationCount += 5;
         }
 
         // Prints the total number of calculations performed during the stress test
