@@ -15,6 +15,7 @@ This repository explores the use of code annotations, specifically attributes, d
   - [Execution Time](#execution-time)
   - [Examples of Code](#examples-of-code)
   - [Standard Library vs Ad-hoc Implementations](#standard-library-vs-ad-hoc-implementations)
+- [Report](https://github.com/CIS1221-2023-2024/C5-CodeAnnotations/blob/Challenger/Report.md)
 
 ## Introduction
 Code annotations are powerful features in programming languages that allow developers to add metadata or modify behavior to their code. In this repository, we focus on attributes, decorators, and assertions in Java and Python. The implementations of these concepts are showcased in a calculator application written by Ryan in Java and Julian in Python.
