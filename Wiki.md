@@ -19,6 +19,7 @@ Welcome to the documentation for the **Code Annotations** project. This project 
    - [FactorialOperation Class](#factorialoperation-class)
 6. []()
 
+
 ## Introduction
 
 The **Code Annotations** project demonstrates the use of attributes, decorators, and assertions in both Java and Python. Annotations are a form of metadata that provide information about the code to the compiler or runtime environment. Annotations can be used to add information to classes, methods, fields, and other program elements. The project includes a calculator application with a menu text-based interface, allowing users to perform various mathematical operations.
@@ -74,6 +75,7 @@ class CalculatorMain {
 }
 ```
 
+
 ## Abstract class
 
 The 'Calculator' class is an abstract class that serves as the foundation for implementing various mathematical operations. It contains abstract methods for performing calculations and an example of a deprecated method.
@@ -94,6 +96,7 @@ abstract class Calculator {
     }
 }
 ```
+
 
 ## Operations file
 In all classes under this file, empty methods can be found since all abstract methods needs to be overidden in each class.
@@ -293,6 +296,7 @@ class FactorialOperation extends Calculator {
     }
 }
 ```
+
 
 ## Stress class
 
