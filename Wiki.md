@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the documentation for the **Code Annotations** project. This project explores various aspects, both in Java and Python, including attributes, decorators, and assertions. The primary goal is to showcase the implementation of a simple calculator application with a menu-driven interface.
+Welcome to the documentation for the **Code Annotations** project. This project explores various aspects in both Java and Python, including attributes, decorators, and assertions. The primary goal is to showcase the implementation of a calculator program that makes use of code annotations.
 
 ## Table of Contents
 
