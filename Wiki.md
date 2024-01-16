@@ -8,9 +8,16 @@ Welcome to the documentation for the **Code Annotations** project. This project 
 
 1. [Introduction](#introduction)
 2. [Main method](#main-method)
-3. [Abstract Class](#abstrac-class)
+3. [Abstract Class](#abstract-class)
 4. []()
-5. []()
+   -
+   -
+   -
+   -
+   -
+   -
+   -
+6. []()
 
 ## Introduction
 
@@ -18,9 +25,9 @@ The **Code Annotations** project demonstrates the use of attributes, decorators,
 
 ## Main Method
 
-The "CalculatorMain" class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. SupressWarning annotation is also used to hide the deprecation error.
+The 'CalculatorMain' class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. SupressWarning annotation is also used to hide the deprecation error.
 
-### Code Snippet:
+### Code Snippet
 
 ```java
 import java.util.Scanner;
@@ -69,7 +76,9 @@ class CalculatorMain {
 
 ## Abstract Class
 
-The "Calculator" class is an abstract class that serves as the foundation for implementing various mathematical operations. It contains abstract methods for performing calculations and an example of a deprecated method.
+The 'Calculator' class is an abstract class that serves as the foundation for implementing various mathematical operations. It contains abstract methods for performing calculations and an example of a deprecated method.
+
+### Code Snippet
 
 ```java
 // Abstract class
@@ -82,6 +91,202 @@ abstract class Calculator {
     @Deprecated
     void deprecatedMethod() {
         System.out.println("This is an example of a deprecated method.");
+    }
+}
+```
+
+## AddOperation Class
+
+The `AddOperation` class extends the `Calculator` abstract class and provides the implementation for addition operations.
+
+#### Code Snippet
+
+```java
+// Addition operation
+class AddOperation extends Calculator {
+    @Override
+    double calculate(double num1, double num2) {
+        return num1 + num2;
+    }
+
+    void calculate(long num) {
+        // This method intentionally left blank for single-parameter calculation
+    }
+}
+```
+
+## SubtractOperation Class
+
+The SubtractOperation class extends the Calculator abstract class and provides the implementation for subtraction operations.
+
+### Code Snippet
+
+```java
+// Subtraction operation
+class SubtractOperation extends Calculator {
+    @Override
+    double calculate(double num1, double num2) {
+        return num1 - num2;
+    }
+
+    void calculate(long num) {
+        // This method intentionally left blank for single-parameter calculation
+    }
+}
+```
+
+## MultiplyOperation Class
+
+The MultiplyOperation class extends the Calculator abstract class and provides the implementation for multiplication operations.
+
+### Code Snippet
+
+```java
+// Multiplication operation
+class MultiplyOperation extends Calculator {
+    @Override
+    double calculate(double num1, double num2) {
+        return num1 * num2;
+    }
+
+    void calculate(long num) {
+        // This method intentionally left blank for single-parameter calculation
+    }
+}
+```
+
+## DivideOperation Class
+
+The `DivideOperation` class extends the `Calculator` abstract class and provides the implementation for division operations.
+
+### Code Snippet
+
+```java
+// Division operation
+class DivideOperation extends Calculator {
+    @Override
+    double calculate(double num1, double num2) {
+
+        assert num2 != 0 : "Divisor must not be 0."; // Checks if the divisor is 0
+
+        if (num2 == 0){
+            throw new IllegalArgumentException("Divisor must not be equal to 0.");
+        }
+        else{
+            return num1 / num2;
+        }
+    }
+
+    void calculate(long num) {
+        // This method intentionally left blank for single-parameter calculation
+    }
+}
+```
+
+## PowerOperation Class
+
+The `PowerOperation` class extends the `Calculator` abstract class and provides the implementation for power operations.
+
+### Code Snippet
+
+```java
+// Power operation
+class PowerOperation extends Calculator {
+    @Override
+    double calculate(double num1, double num2) {
+        return Math.pow(num1, num2);
+    }
+
+    void calculate(long num) {
+        // This method intentionally left blank for single-parameter calculation
+    }
+}
+```
+
+## SquareRootOperation Class
+
+The `SquareRootOperation` class extends the `Calculator` abstract class and provides the implementation for square root operations.
+
+### Code Snippet
+
+```java
+// Square root operation
+class SquareRootOperation extends Calculator {
+    @Override
+    void calculate(long num) {
+        assert num >= 0 : "Number needs to be greater or equal to 0.";
+        System.out.println(Math.sqrt(num));
+    }
+
+    double calculate(double num1, double num2){
+        // This method intentionally left blank for double-parameter calculation
+        return 0;
+    }
+}
+```
+
+## FactorialOperation Class
+
+The `FactorialOperation` class extends the `Calculator` abstract class and provides the implementation for factorial operations.
+
+### Code Snippet
+
+```java
+// Factorial operation
+class FactorialOperation extends Calculator {
+    @Override
+    void calculate(long n) {
+
+        // Checks if the number is 0 or greater
+        if (n >= 0) {
+            // Recursive factorial
+            long startRec = System.nanoTime();
+            long resultRec = calculateRec(n);
+            long endRec = System.nanoTime();
+
+            // Iterative factorial
+            long startIter = System.nanoTime();
+            long resultIter = calculateIter(n);
+            long endIter = System.nanoTime();
+
+            // Calculate and display execution times
+            long executionRec = endRec - startRec;
+            long executionIter = endIter - startIter;
+
+            System.out.println("Recursive Factorial Result: " + resultRec);
+            System.out.println("Iterative Factorial Result: " + resultIter);
+            System.out.println("Execution Time (Recursive): " + executionRec + " nanoseconds");
+            System.out.println("Execution Time (Iterative): " + executionIter + " nanoseconds");
+        } else {
+            assert n < 0 : "Number must be greater or equal to 0.";
+            // Number must be greater or equal to 0
+            throw new IllegalArgumentException("Number must be greater or equal to 0.");
+        }
+    }
+
+    double calculate(double num1, double num2){
+        // This method intentionally left blank for double-parameter calculation
+        return 0;
+    }
+
+    // Factorial recursively
+    private long calculateRec(long n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * calculateRec(n - 1);
+    }
+
+    // Factorial iteratively
+    private long calculateIter(long n) {
+
+        long result = 1;
+
+        for(int i = 1; i <= n; i++) {
+
+            result *= i;
+        }
+        return result;
     }
 }
 ```
