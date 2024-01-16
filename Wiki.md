@@ -8,9 +8,9 @@ Welcome to the documentation for the **Code Annotations** project. This project 
 
 1. [Introduction](#introduction)
 2. [Main method](#main-method)
-3. [Calculator Abstract Class](#calculator-abstract-class)
-4. [Calculator Operations](#calculator-operations)
-5. [Stress Class](#stress-class)
+3. [Abstract Class](#abstrac-class)
+4. []()
+5. []()
 
 ## Introduction
 
@@ -18,7 +18,7 @@ The **Code Annotations** project demonstrates the use of attributes, decorators,
 
 ## Main Method
 
-The `CalculatorMain` class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. SupressWarning annotation is also used to hide the deprecation error.
+The "CalculatorMain" class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. SupressWarning annotation is also used to hide the deprecation error.
 
 ### Code Snippet:
 
@@ -63,6 +63,25 @@ class CalculatorMain {
             // Deprecated method
             operationCalc.deprecatedMethod();
         }
+    }
+}
+```
+
+## Abstract Class
+
+The "Calculator" class is an abstract class that serves as the foundation for implementing various mathematical operations. It contains abstract methods for performing calculations and an example of a deprecated method.
+
+```java
+// Abstract class
+abstract class Calculator {
+    // Abstract methods and overloading
+    abstract double calculate(double num1, double num2); // Method with 2 parameters
+    abstract void calculate(long num); // Method with 1 parameter
+
+    // An example of a deprecated method
+    @Deprecated
+    void deprecatedMethod() {
+        System.out.println("This is an example of a deprecated method.");
     }
 }
 ```
