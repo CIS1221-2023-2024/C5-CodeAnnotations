@@ -20,9 +20,12 @@ Welcome to the documentation for the **Code Annotations** project. This project 
 6. [Stress class](#stress-class)
 
 
+
 ## Introduction
 
 The **Code Annotations** project demonstrates the use of attributes, decorators, and assertions in both Java and Python. Annotations are a form of metadata that provide information about the code to the compiler or runtime environment. Annotations can be used to add information to classes, methods, fields, and other program elements. The project includes a calculator application with a menu text-based interface, allowing users to perform various mathematical operations.
+
+
 
 ## Main Method
 
@@ -74,6 +77,7 @@ class CalculatorMain {
     }
 }
 ```
+
 
 
 ## Abstract class
@@ -296,6 +300,7 @@ class FactorialOperation extends Calculator {
     }
 }
 ```
+
 
 
 ## Stress class
