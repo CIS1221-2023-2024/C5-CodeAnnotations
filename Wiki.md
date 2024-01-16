@@ -7,7 +7,7 @@ Welcome to the documentation for the **Code Annotations** project. This project 
 ## Table of Contents
 
 a. [Introduction](#introduction)
-b. [Java](#java)
+b. [Java](#introduction)
    1. [Main method](#main-method)
    2. [Abstract class](#abstract-class)
    3. [Operations file](#operations-file)
