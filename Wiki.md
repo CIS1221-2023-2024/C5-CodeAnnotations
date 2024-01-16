@@ -6,18 +6,19 @@ Welcome to the documentation for the **Code Annotations** project. This project 
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Main method](#main-method)
-3. [Abstract class](#abstract-class)
-4. [Operations file](#operations-file)
-   - [AddOperation Class](#operation-class)
-   - [SubtractOperation Class](#addoperation-class)
-   - [MultiplyOperation Class](#subtractoperation-class)
-   - [DivideOperation Class](#divideoperation-class)
-   - [PowerOperation Class](#poweroperation-class)
-   - [SquareRootOperation Class](#squarerootoperation-class)
-   - [FactorialOperation Class](#factorialoperation-class)
-6. [Stress class](#stress-class)
+a. [Introduction](#introduction)
+b. []()
+   1. [Main method](#main-method)
+   2. [Abstract class](#abstract-class)
+   3. [Operations file](#operations-file)
+      - [AddOperation Class](#operation-class)
+      - [SubtractOperation Class](#addoperation-class)
+      - [MultiplyOperation Class](#subtractoperation-class)
+      - [DivideOperation Class](#divideoperation-class)
+      - [PowerOperation Class](#poweroperation-class)
+      - [SquareRootOperation Class](#squarerootoperation-class)
+      - [FactorialOperation Class](#factorialoperation-class)
+   4. [Stress class](#stress-class)
 
 
 
@@ -25,6 +26,9 @@ Welcome to the documentation for the **Code Annotations** project. This project 
 
 The **Code Annotations** project demonstrates the use of attributes, decorators, and assertions in both Java and Python. Annotations are a form of metadata that provide information about the code to the compiler or runtime environment. Annotations can be used to add information to classes, methods, fields, and other program elements. The project includes a calculator application with a menu text-based interface, allowing users to perform various mathematical operations.
 
+
+
+# Java
 
 
 ## Main Method
