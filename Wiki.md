@@ -17,7 +17,7 @@ Welcome to the documentation for the **Code Annotations** project. This project 
    - [PowerOperation Class](#poweroperation-class)
    - [SquareRootOperation Class](#squarerootoperation-class)
    - [FactorialOperation Class](#factorialoperation-class)
-6. [Stress class](stress-class)
+6. [Stress class](#stress-class)
 
 
 ## Introduction
