@@ -8,15 +8,15 @@ Welcome to the documentation for the **Code Annotations** project. This project 
 
 1. [Introduction](#introduction)
 2. [Main method](#main-method)
-3. [Abstract Class](#abstract-class)
-4. []()
-   -
-   -
-   -
-   -
-   -
-   -
-   -
+3. [Abstract class](#abstract-class)
+4. [Operations file](operations-file)
+   -[AddOperation Class](operation-class)
+   -[SubtractOperation Class](addoperation-class)
+   -[MultiplyOperation Class](subtractoperation-class)
+   -[DivideOperation Class](divideoperation-class)
+   -[PowerOperation Class](poweroperation-class)
+   -[SquareRootOperation Class](squarerootoperation-class)
+   -[FactorialOperation Class](factorialoperation-class)
 6. []()
 
 ## Introduction
@@ -27,7 +27,7 @@ The **Code Annotations** project demonstrates the use of attributes, decorators,
 
 The 'CalculatorMain' class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. SupressWarning annotation is also used to hide the deprecation error.
 
-### Code Snippet
+#### Code Snippet
 
 ```java
 import java.util.Scanner;
@@ -74,11 +74,11 @@ class CalculatorMain {
 }
 ```
 
-## Abstract Class
+## Abstract class
 
 The 'Calculator' class is an abstract class that serves as the foundation for implementing various mathematical operations. It contains abstract methods for performing calculations and an example of a deprecated method.
 
-### Code Snippet
+#### Code Snippet
 
 ```java
 // Abstract class
@@ -95,7 +95,9 @@ abstract class Calculator {
 }
 ```
 
-## AddOperation Class
+## Operations file
+
+### AddOperation Class
 
 The `AddOperation` class extends the `Calculator` abstract class and provides the implementation for addition operations.
 
@@ -115,11 +117,11 @@ class AddOperation extends Calculator {
 }
 ```
 
-## SubtractOperation Class
+### SubtractOperation Class
 
 The SubtractOperation class extends the Calculator abstract class and provides the implementation for subtraction operations.
 
-### Code Snippet
+#### Code Snippet
 
 ```java
 // Subtraction operation
@@ -135,11 +137,11 @@ class SubtractOperation extends Calculator {
 }
 ```
 
-## MultiplyOperation Class
+### MultiplyOperation Class
 
 The MultiplyOperation class extends the Calculator abstract class and provides the implementation for multiplication operations.
 
-### Code Snippet
+#### Code Snippet
 
 ```java
 // Multiplication operation
@@ -155,11 +157,11 @@ class MultiplyOperation extends Calculator {
 }
 ```
 
-## DivideOperation Class
+### DivideOperation Class
 
 The `DivideOperation` class extends the `Calculator` abstract class and provides the implementation for division operations.
 
-### Code Snippet
+#### Code Snippet
 
 ```java
 // Division operation
@@ -183,11 +185,11 @@ class DivideOperation extends Calculator {
 }
 ```
 
-## PowerOperation Class
+### PowerOperation Class
 
 The `PowerOperation` class extends the `Calculator` abstract class and provides the implementation for power operations.
 
-### Code Snippet
+#### Code Snippet
 
 ```java
 // Power operation
@@ -203,11 +205,11 @@ class PowerOperation extends Calculator {
 }
 ```
 
-## SquareRootOperation Class
+### SquareRootOperation Class
 
 The `SquareRootOperation` class extends the `Calculator` abstract class and provides the implementation for square root operations.
 
-### Code Snippet
+#### Code Snippet
 
 ```java
 // Square root operation
@@ -225,11 +227,11 @@ class SquareRootOperation extends Calculator {
 }
 ```
 
-## FactorialOperation Class
+### FactorialOperation Class
 
 The `FactorialOperation` class extends the `Calculator` abstract class and provides the implementation for factorial operations.
 
-### Code Snippet
+#### Code Snippet
 
 ```java
 // Factorial operation
