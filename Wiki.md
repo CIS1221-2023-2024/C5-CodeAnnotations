@@ -96,6 +96,7 @@ abstract class Calculator {
 ```
 
 ## Operations file
+In all classes under this file, empty methods can be found since all abstract methods needs to be overidden in each class.
 
 ### AddOperation Class
 
@@ -159,7 +160,7 @@ class MultiplyOperation extends Calculator {
 
 ### DivideOperation Class
 
-The `DivideOperation` class extends the `Calculator` abstract class and provides the implementation for division operations.
+The `DivideOperation` class extends the `Calculator` abstract class and provides the implementation for division operations. Through the use of the assert statement the variable num2 is checked to see if it is not equal to 0. If num2 is equal to 0, the assertion will raise an AssertionError with the message "Divisor must not be 0."
 
 #### Code Snippet
 
@@ -207,7 +208,7 @@ class PowerOperation extends Calculator {
 
 ### SquareRootOperation Class
 
-The `SquareRootOperation` class extends the `Calculator` abstract class and provides the implementation for square root operations.
+The `SquareRootOperation` class extends the `Calculator` abstract class and provides the implementation for square root operations. Through the use of the assert statement the variable num2 is checked to see if it is greater or equal to 0. If num2 is not greater or equal to 0, the assertion will raise an AssertionError with the message "Number needs to be greater than or equal to 0."
 
 #### Code Snippet
 
@@ -229,7 +230,7 @@ class SquareRootOperation extends Calculator {
 
 ### FactorialOperation Class
 
-The `FactorialOperation` class extends the `Calculator` abstract class and provides the implementation for factorial operations.
+The `FactorialOperation` class extends the `Calculator` abstract class and provides the implementation for factorial operations. In the factorial class, a comparison is being made by running the same calculation using recursion and iteration. For each execution, the time is measured to compare which method is more efficient. Assertion is also used to check if the variable n is less than 0. If n is less than 0 an AssertionError will be raised with the message "Number must be greater or equal to 0."
 
 #### Code Snippet
 
