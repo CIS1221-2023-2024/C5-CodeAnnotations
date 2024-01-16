@@ -29,7 +29,7 @@ The **Code Annotations** project demonstrates the use of attributes, decorators,
 
 ## Main Method
 
-The 'CalculatorMain' class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. SupressWarning annotation is also used to hide the deprecation error.
+The `CalculatorMain` class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. SupressWarning annotation is also used to hide the deprecation error.
 
 #### Code Snippet
 
@@ -82,7 +82,7 @@ class CalculatorMain {
 
 ## Abstract class
 
-The 'Calculator' class is an abstract class that serves as the foundation for implementing various mathematical operations. It contains abstract methods for performing calculations and an example of a deprecated method.
+The `Calculator` class is an abstract class that serves as the foundation for implementing various mathematical operations. It contains abstract methods for performing calculations and an example of a deprecated method.
 
 #### Code Snippet
 
