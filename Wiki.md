@@ -26,7 +26,7 @@ b. [Java](#introduction)
 c. [Python](#python)
    1. [Introduction](#Intro)
    2. [Main Class](#Main-Class)
-   3. [Operations](#Operations-CLass)
+   3. [Operations](#Operations)
    4. [Runner](#Runner-Class)
 
 
