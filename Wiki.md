@@ -13,13 +13,13 @@ b. [Java](#introduction)
    1. [Main method](#main-method)
    2. [Abstract class](#abstract-class)
    3. [Operations file](#operations-file)
-      - [AddOperation Class](#operation-class)
-      - [SubtractOperation Class](#addoperation-class)
-      - [MultiplyOperation Class](#subtractoperation-class)
-      - [DivideOperation Class](#divideoperation-class)
-      - [PowerOperation Class](#poweroperation-class)
-      - [SquareRootOperation Class](#squarerootoperation-class)
-      - [FactorialOperation Class](#factorialoperation-class)
+      - [Addition Class](#addition-class)
+      - [Subtraction Class](#subtraction-class)
+      - [Multiplication Class](#multiplication-class)
+      - [Division Class](#division-class)
+      - [Power Class](#power-class)
+      - [SquareRoot Class](#squareroot-class)
+      - [Factorial Class](#factorial-class)
    4. [Stress class](#stress-class)
 
       
@@ -145,87 +145,83 @@ The `Calculator` class is an abstract class that serves as the foundation for im
 #### Code Snippet
 
 ```java
-// Abstract class
-abstract class Calculator {
+abstract public class Calculator {
     // Abstract methods and overloading
-    abstract double calculate(double num1, double num2); // Method with 2 parameters
-    abstract void calculate(long num); // Method with 1 parameter
+    abstract public double calculate(double num1, double num2); // Method with 2 parameters
+    abstract public void calculate(long num); // Method with 1 parameter
 
     // An example of a deprecated method
     @Deprecated
-    void deprecatedMethod() {
+    public void deprecatedMethod() {
         System.out.println("This is an example of a deprecated method.");
     }
 }
 ```
 
 
-## Operations file
-In all classes under this file, empty methods can be found since all abstract methods needs to be overidden in each class.
+## Operations package
+In all classes under this package, empty methods can be found since all abstract methods needs to be overidden in each class.
 
-### AddOperation Class
+### Adddition Class
 
-The `AddOperation` class extends the `Calculator` abstract class and provides the implementation for addition operations.
+The `Addition` class extends the `Calculator` abstract class and provides the implementation for addition operations.
 
 #### Code Snippet
 
 ```java
-// Addition operation
-class AddOperation extends Calculator {
+public class Addition extends Calculator {
     @Override
-    double calculate(double num1, double num2) {
+    public double calculate(double num1, double num2) {
         return num1 + num2;
     }
 
-    void calculate(long num) {
-        // This method intentionally left blank for single-parameter calculation
+    public void calculate(long num) {
+
     }
 }
 ```
 
-### SubtractOperation Class
+### Subtraction Class
 
-The SubtractOperation class extends the Calculator abstract class and provides the implementation for subtraction operations.
+The `Subtraction` class extends the `Calculator abstract class and provides the implementation for subtraction operations.
 
 #### Code Snippet
 
 ```java
-// Subtraction operation
-class SubtractOperation extends Calculator {
+public class Subtraction extends Calculator {
     @Override
-    double calculate(double num1, double num2) {
+    public double calculate(double num1, double num2) {
         return num1 - num2;
     }
 
-    void calculate(long num) {
-        // This method intentionally left blank for single-parameter calculation
+    public void calculate(long num) {
+
     }
 }
 ```
 
-### MultiplyOperation Class
+### Multiplication Class
 
-The MultiplyOperation class extends the Calculator abstract class and provides the implementation for multiplication operations.
+The `Multiplication` class extends the `Calculator` abstract class and provides the implementation for multiplication operations.
 
 #### Code Snippet
 
 ```java
-// Multiplication operation
-class MultiplyOperation extends Calculator {
+public class Multiplication extends Calculator {
     @Override
-    double calculate(double num1, double num2) {
+    public double calculate(double num1, double num2) {
         return num1 * num2;
     }
 
-    void calculate(long num) {
-        // This method intentionally left blank for single-parameter calculation
+    public void calculate(long num) {
+
     }
 }
 ```
 
-### DivideOperation Class
+### Division Class
 
-The `DivideOperation` class extends the `Calculator` abstract class and provides the implementation for division operations. Through the use of the assert statement the variable num2 is checked to see if it is not equal to 0. If num2 is equal to 0, the assertion will raise an AssertionError with the message "Divisor must not be 0."
+The `Division` class extends the `Calculator` abstract class and provides the implementation for division operations. Through the use of the assert statement the variable num2 is checked to see if it is not equal to 0. If num2 is equal to 0, the assertion will raise an AssertionError with the message "Divisor must not be 0."
 
 #### Code Snippet
 
@@ -251,9 +247,9 @@ class DivideOperation extends Calculator {
 }
 ```
 
-### PowerOperation Class
+### Power Class
 
-The `PowerOperation` class extends the `Calculator` abstract class and provides the implementation for power operations.
+The `Power` class extends the `Calculator` abstract class and provides the implementation for power operations.
 
 #### Code Snippet
 
@@ -271,9 +267,9 @@ class PowerOperation extends Calculator {
 }
 ```
 
-### SquareRootOperation Class
+### SquareRoot Class
 
-The `SquareRootOperation` class extends the `Calculator` abstract class and provides the implementation for square root operations. Through the use of the assert statement the variable num2 is checked to see if it is greater or equal to 0. If num2 is not greater or equal to 0, the assertion will raise an AssertionError with the message "Number needs to be greater than or equal to 0."
+The `SquareRoot` class extends the `Calculator` abstract class and provides the implementation for square root operations. Through the use of the assert statement the variable num2 is checked to see if it is greater or equal to 0. If num2 is not greater or equal to 0, the assertion will raise an AssertionError with the message "Number needs to be greater than or equal to 0."
 
 #### Code Snippet
 
@@ -293,9 +289,9 @@ class SquareRootOperation extends Calculator {
 }
 ```
 
-### FactorialOperation Class
+### Factorial Class
 
-The `FactorialOperation` class extends the `Calculator` abstract class and provides the implementation for factorial operations. In the factorial class, a comparison is being made by running the same calculation using recursion and iteration. For each execution, the time is measured to compare which method is more efficient. Assertion is also used to check if the variable n is less than 0. If n is less than 0 an AssertionError will be raised with the message "Number must be greater or equal to 0."
+The `Factorial` class extends the `Calculator` abstract class and provides the implementation for factorial operations. In the factorial class, a comparison is being made by running the same calculation using recursion and iteration. For each execution, the time is measured to compare which method is more efficient. Assertion is also used to check if the variable n is less than 0. If n is less than 0 an AssertionError will be raised with the message "Number must be greater or equal to 0."
 
 #### Code Snippet
 
