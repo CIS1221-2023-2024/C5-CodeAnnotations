@@ -101,9 +101,8 @@ class CalculatorMain {
                 }
             }
             catch (InputMismatchException e) {
-                System.out.println("Invalid choice, please try again");
+                System.out.println("Invalid choice, please try again.");
                 scanner.nextLine(); // Consumes the invalid input
-                continue;
             }
 
             // Deprecated method
