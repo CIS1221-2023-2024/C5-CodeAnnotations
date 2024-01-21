@@ -24,7 +24,10 @@ b. [Java](#introduction)
 
       
 c. [Python](#python)
-   1. [CalculatorMain](#main-method) 
+   1. [Introduction](#introduction-python)
+   2. [Main Method](#main-method-python)
+   3. [Operations](#operations-python)
+   4. [Runner](#runner-python)
 
 
 
@@ -418,3 +421,37 @@ class Stress {
 
 
 # Python
+
+### Introduction
+
+In my part of the Code Annotations project, I made a user-friendly calculator in Python. This calculator, wrapped in the CalculatorMain and Operations classes, covers essential math operations—addition, subtraction, multiplication, and more. I ensured it handles tricky situations gracefully, like preventing division by zero and offering clear messages for invalid inputs. For a real-world check, I put the calculator through a stress test, monitoring its CPU and memory usage. Additionally, I compared two methods for calculating factorials to find the most efficient approach. Essentially, my work brings a reliable and efficient Python calculator to the Code Annotations project.
+
+
+
+### Main Method 
+
+The 'CalculatorMain' class presents a user-friendly menu featuring standard mathematical operations and a stress test. Beyond its interface display, it incorporates a robust error-handling system that provides clear explanations to users when errors occur.
+
+'''python
+    
+    def menu(self) -> None:
+        # Initialize x and y outside the loop to retain their values between iterations
+        x = 0
+        y = 0
+
+        while True:
+            print("\n--CALCULATOR--")
+            print("1. Add")
+            print("2. Subtract")
+            print("3. Multiply")
+            print("4. Divide")
+            print("5. Power")
+            print("6. Square Root")
+            print("7. Factorial")
+            print("8. Stress Test")
+            print("9. Exit")    # Program terminates and shows the cumulative result of other previous results
+
+'''
+
+After initializing x and y to be used for the inputs, the user is presented with all the possible functions to choose from. Regarding cumulative results, it will be tackled with the 'Operations' class [here](#operations-python)
+
