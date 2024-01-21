@@ -226,23 +226,17 @@ The `Division` class extends the `Calculator` abstract class and provides the im
 #### Code Snippet
 
 ```java
-// Division operation
-class DivideOperation extends Calculator {
+public class Division extends Calculator {
     @Override
-    double calculate(double num1, double num2) {
+    public double calculate(double num1, double num2) {
 
         assert num2 != 0 : "Divisor must not be 0."; // Checks if the divisor is 0
 
-        if (num2 == 0){
-            throw new IllegalArgumentException("Divisor must not be equal to 0.");
-        }
-        else{
-            return num1 / num2;
-        }
+        return num1 / num2;
     }
 
-    void calculate(long num) {
-        // This method intentionally left blank for single-parameter calculation
+    public void calculate(long num) {
+
     }
 }
 ```
@@ -254,15 +248,14 @@ The `Power` class extends the `Calculator` abstract class and provides the imple
 #### Code Snippet
 
 ```java
-// Power operation
-class PowerOperation extends Calculator {
+public class Power extends Calculator {
     @Override
-    double calculate(double num1, double num2) {
-        return Math.pow(num1, num2);
+    public double calculate(double num1, double num2) {
+        return Math.pow(num1, num2); // Example of a standard method
     }
 
-    void calculate(long num) {
-        // This method intentionally left blank for single-parameter calculation
+    public void calculate(long num) {
+
     }
 }
 ```
@@ -274,16 +267,16 @@ The `SquareRoot` class extends the `Calculator` abstract class and provides the 
 #### Code Snippet
 
 ```java
-// Square root operation
-class SquareRootOperation extends Calculator {
+public class SquareRoot extends Calculator {
     @Override
-    void calculate(long num) {
-        assert num >= 0 : "Number needs to be greater or equal to 0.";
+    public void calculate(long num) {
+
+        assert num >= 0 : "Number needs to be greater or equal to 0."; // Checks if number is greater or equal to 0
+
         System.out.println(Math.sqrt(num));
     }
 
-    double calculate(double num1, double num2){
-        // This method intentionally left blank for double-parameter calculation
+    public double calculate(double num1, double num2) {
         return 0;
     }
 }
@@ -296,12 +289,11 @@ The `Factorial` class extends the `Calculator` abstract class and provides the i
 #### Code Snippet
 
 ```java
-// Factorial operation
-class FactorialOperation extends Calculator {
+public class Factorial extends Calculator {
     @Override
-    void calculate(long n) {
+    public void calculate(long n) {
 
-        // Checks if the number is 0 or greater
+        // Checks if number is 0 or greater
         if (n >= 0) {
             // Recursive factorial
             long startRec = System.nanoTime();
@@ -321,15 +313,14 @@ class FactorialOperation extends Calculator {
             System.out.println("Iterative Factorial Result: " + resultIter);
             System.out.println("Execution Time (Recursive): " + executionRec + " nanoseconds");
             System.out.println("Execution Time (Iterative): " + executionIter + " nanoseconds");
-        } else {
-            assert n < 0 : "Number must be greater or equal to 0.";
-            // Number must be greater or equal to 0
+        }
+        else {
+            assert n < 0 : "Number must be greater or equal to 0."; // Number must be greater or equal to 0
             throw new IllegalArgumentException("Number must be greater or equal to 0.");
         }
     }
 
-    double calculate(double num1, double num2){
-        // This method intentionally left blank for double-parameter calculation
+    public double calculate(double num1, double num2){
         return 0;
     }
 
@@ -365,7 +356,7 @@ The `Stress` class contains a method for performing a random stress test on math
 
 ```java
 class Stress {
-    void randomStressTest() {
+    public void randomStressTest() {
         // Setting the start time for the stress test
         long startTime = System.currentTimeMillis();
 
@@ -379,7 +370,7 @@ class Stress {
         double totalCpuUsage = 0.0;
         double totalMemoryUsage = 0.0;
 
-        // Get the OperatingSystemMXBean and MemoryMXBean
+        // Getting the OperatingSystemMXBean and MemoryMXBean
         OperatingSystemMXBean osBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
         MemoryMXBean memoryBean = ManagementFactory.getMemoryMXBean();
 
@@ -393,19 +384,19 @@ class Stress {
             double num2 = Math.random() * 1000;
 
             // Create instances of Calculator for different operations
-            Calculator AddOperation = new AddOperation();
-            Calculator SubtractOperation = new SubtractOperation();
-            Calculator MultiplyOperation = new MultiplyOperation();
-            Calculator DivideOperation = new DivideOperation();
+            Calculator add = new Addition();
+            Calculator sub = new Subtraction();
+            Calculator mul = new Multiplication();
+            Calculator div = new Division();
 
             // Calculate results
-            AddOperation.calculate(num1, num2);
-            SubtractOperation.calculate(num1, num2);
-            MultiplyOperation.calculate(num1, num2);
-            DivideOperation.calculate(num1, num2);
+            add.calculate(num1, num2);
+            sub.calculate(num1, num2);
+            mul.calculate(num1, num2);
+            div.calculate(num1, num2);
 
             // Update the calculation count
-            calculationCount += 4;
+            calculationCount += 1;
 
             // Addition of the CPU and memory usage
             totalCpuUsage += osBean.getSystemCpuLoad() * 100;
