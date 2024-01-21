@@ -38,53 +38,74 @@ The **Code Annotations** project demonstrates the use of attributes, decorators,
 
 ## Main Method
 
-The `CalculatorMain` class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. SupressWarning annotation is also used to hide the deprecation error.
+The `CalculatorMain` class serves as the main entry point for the program. It utilizes a menu loop to interact with users, offering options for different mathematical operations. The program supports addition, subtraction, multiplication, division, power, square root, factorial, and includes a random number stress test. In addition, it handles input mismatch errors. SupressWarning annotation is also used to hide the deprecation error.
 
 #### Code Snippet
 
 ```java
-import java.util.Scanner;
+while (true) {
+            // Display menu
+            System.out.println("Calculator Menu:");
+            System.out.println("1. Addition");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Multiplication");
+            System.out.println("4. Division");
+            System.out.println("5. Power");
+            System.out.println("6. Square root");
+            System.out.println("7. Factorial");
+            System.out.println("8. Random Number Stress Test");
+            System.out.println("0. Exit");
+            System.out.print("Enter your choice: ");
 
-// Class for the main program
-class CalculatorMain {
+            int choice;
 
-    // Main method for the program
-    @SuppressWarnings("deprecation") // Used to remove the deprecation warning
-    public static void main(String[] args) {
-
-        // ... (Initializations and Scanner setup)
-
-        // Menu loop
-        while (true) {
-            // ... (Display menu)
-
-            int choice = scanner.nextInt(); // Asks user for choice
-
-            // Checks user's choice
-            if (choice == 0) {
-                System.out.println("Exiting the calculator.");
-                break;
+            // Error handling
+            try {
+                choice = scanner.nextInt(); // Asks user for choice
             }
-
-            // Perform the chosen operation
-            switch (choice) {
-                // ... (Cases for different operations)
+            catch (InputMismatchException e) {
+                System.out.println("Invalid choice, please try again");
+                scanner.nextLine(); // Consumes the invalid input
+                continue;
             }
+...
+```
 
-            if (choice >= 1 && choice <= 5) {
-                // ... (Get user input for the calculation)
-                double result = operationCalc.calculate(num1, num2);
-                System.out.println("Result: " + result);
-            } else if (choice == 6 || choice == 7) {
-                // ... (Get user input for the calculation)
-                operationCalc.calculate(num);
+```java
+switch (choice) {
+                case 1:
+                    operationCalc = new Addition();
+                    break;
+                case 2:
+                    operationCalc = new Subtraction();
+                    break;
+                case 3:
+                    operationCalc = new Multiplication();
+                    break;
+                case 4:
+                    operationCalc = new Division();
+                    break;
+                case 5:
+                    operationCalc = new Power();
+                    break;
+                case 6:
+                    operationCalc = new SquareRoot();
+                    break;
+                case 7:
+                    operationCalc = new Factorial();
+                    break;
+                case 8:
+                    operationExtra.randomStressTest();
+                    continue; // Skips the rest of the loop
+                default:
+                    System.out.println("Invalid choice.");
+                    continue; // Skips the rest of the loop if an invalid choice is given
             }
+```
 
-            // Deprecated method
-            operationCalc.deprecatedMethod();
-        }
-    }
-}
+```java
+// Deprecated method
+operationCalc.deprecatedMethod();
 ```
 
 
