@@ -225,7 +225,7 @@ public class Multiplication extends Calculator {
 
 ### Division Class
 
-The `Division` class extends the `Calculator` abstract class and provides the implementation for division operations. Through the use of the assert statement the variable num2 is checked to see if it is not equal to 0. If num2 is equal to 0, the assertion will raise an AssertionError with the message "Divisor must not be 0."
+The `Division` class extends the `Calculator` abstract class and provides the implementation for division operations. Through the use of the assert statement and if statement the variable num2 is checked to see if it is not equal to 0. If num2 is equal to 0, NaN will be returned.
 
 #### Code Snippet
 
@@ -234,9 +234,16 @@ public class Division extends Calculator {
     @Override
     public double calculate(double num1, double num2) {
 
-        assert num2 != 0 : "Divisor must not be 0."; // Checks if the divisor is 0
+        assert num2 != 0 : "Divisor must not be 0."; // Example of assertion
 
-        return num1 / num2;
+        // Checks if the divisor is 0
+        if (num2 == 0) {
+            System.out.println("Divisor must not be 0, returning special value.");
+            return Double.NaN;
+        }
+        else {
+            return num1 / num2;
+        }
     }
 
     public void calculate(long num) {
@@ -266,18 +273,26 @@ public class Power extends Calculator {
 
 ### SquareRoot Class
 
-The `SquareRoot` class extends the `Calculator` abstract class and provides the implementation for square root operations. Through the use of the assert statement the variable num2 is checked to see if it is greater or equal to 0. If num2 is not greater or equal to 0, the assertion will raise an AssertionError with the message "Number needs to be greater than or equal to 0."
+The `SquareRoot` class extends the `Calculator` abstract class and provides the implementation for square root operations. Through the use of the assert statement and if statement the variable num2 is checked to see whether it is a negative number. If num2 is negative, "Cannot calculate the square root of a negative number" will be displayed.
 
 #### Code Snippet
 
 ```java
+package Operations;
+import Calculator.*;
+// Square root operation
 public class SquareRoot extends Calculator {
     @Override
     public void calculate(long num) {
 
-        assert num >= 0 : "Number needs to be greater or equal to 0."; // Checks if number is greater or equal to 0
+        assert num >= 0 : "Cannot calculate the square root of a negative number."; // Example of assertion
 
-        System.out.println(Math.sqrt(num));
+        // Checks if number is greater or equal to 0
+        if (num < 0) {
+            System.out.println("Cannot calculate the square root of a negative number.");
+        } else {
+            System.out.println(Math.sqrt(num));
+        }
     }
 
     public double calculate(double num1, double num2) {
