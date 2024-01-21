@@ -712,7 +712,8 @@ The `@log_operation` and `@log_time` decorators are used to apply the following 
 ```
 
 
-`log_operation` is used to print the results of every function that calls it via the @log_operation
+`log_operation` is used to print the results of every function that calls it via the `@log_operation`
+
 `log_time` is used to measure the execution time for every operation, with a focus on comparing the performance of recursive and iterative factorial methods. It specifically aims to assess the efficiency of these methods when dealing with exceptionally large numbers, up to the factorial of 205,000.
 
 
@@ -754,8 +755,9 @@ With the `@log_time` and `@log_operation` decorator being applied to each method
 ```
 
 
-
-
+Using MatPlotLib, a graph was made to visualize the time taken against increasingly bigger numbers by both methods.
+Iterative Graph can be found here: 
+Recursive Graph can be found here: 
 
 
 
@@ -764,3 +766,17 @@ With the `@log_time` and `@log_operation` decorator being applied to each method
 The random stress test is designed to evaluate the performance and resource utilization of the calculator operations under simulated high-stress conditions. During a 10-second interval, the stress test generates random pairs of numbers in the range [0, 1000) and applies four fundamental arithmetic operations (Addition, Subtraction, Multiplication and Division) on these pairs. The results of each operation are accumulated, providing a cumulative summary of addition, subtraction, multiplication, and division. Additionally, the stress test reports the total number of calculations conducted within the 10-second timeframe. The test monitors and prints average CPU and memory usage, offering insights into the computational efficiency and resource consumption of the calculator operations during stress scenarios.
 
 
+
+## Runner
+
+### This class is used as a runner, it takes in the CalculatorMain and executes.
+#### Code Snippet:
+
+```python
+# This is the runner class
+from Calculator import CalculatorMain
+
+calculator_test = CalculatorMain()
+
+calculator_test.menu()
+```
