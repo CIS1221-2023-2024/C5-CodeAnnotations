@@ -1,4 +1,7 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
+import Calculator.*;
+import Operations.*;
 
 // Class for the main program
 class CalculatorMain {
@@ -27,7 +30,17 @@ class CalculatorMain {
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
-            int choice = scanner.nextInt(); // Asks user for choice
+            int choice;
+
+            // Error handling
+            try {
+                choice = scanner.nextInt(); // Asks user for choice
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Invalid choice, please try again");
+                scanner.nextLine(); // Consumes the invalid input
+                continue;
+            }
 
             // Checks user's choice
             if (choice == 0) {
@@ -38,25 +51,25 @@ class CalculatorMain {
             // Perform the chosen operation
             switch (choice) {
                 case 1:
-                    operationCalc = new AddOperation();
+                    operationCalc = new Addition();
                     break;
                 case 2:
-                    operationCalc = new SubtractOperation();
+                    operationCalc = new Subtraction();
                     break;
                 case 3:
-                    operationCalc = new MultiplyOperation();
+                    operationCalc = new Multiplication();
                     break;
                 case 4:
-                    operationCalc = new DivideOperation();
+                    operationCalc = new Division();
                     break;
                 case 5:
-                    operationCalc = new PowerOperation();
+                    operationCalc = new Power();
                     break;
                 case 6:
-                    operationCalc = new SquareRootOperation();
+                    operationCalc = new SquareRoot();
                     break;
                 case 7:
-                    operationCalc = new FactorialOperation();
+                    operationCalc = new Factorial();
                     break;
                 case 8:
                     operationExtra.randomStressTest();
@@ -66,24 +79,31 @@ class CalculatorMain {
                     continue; // Skips the rest of the loop if an invalid choice is given
             }
 
-            if (choice >= 1 && choice <= 5) {
-                // Get user input for the calculation
-                System.out.print("Enter first number: ");
-                double num1 = scanner.nextDouble();
-                System.out.print("Enter second number: ");
-                double num2 = scanner.nextDouble();
+            try {
+                if (choice >= 1 && choice <= 5) {
+                    // Get user input for the calculation
+                    System.out.print("Enter first number: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Enter second number: ");
+                    double num2 = scanner.nextDouble();
 
-                // Calculate and display result
-                double result = operationCalc.calculate(num1, num2);
-                System.out.println("Result: " + result);
+                    // Calculate and display result
+                    double result = operationCalc.calculate(num1, num2);
+                    System.out.println("Result: " + result);
+                }
+                else if (choice == 6 || choice == 7) {
+                    // Get user input for the calculation
+                    System.out.print("Enter number: ");
+                    long num = scanner.nextInt();
+
+                    // Calculate and display result
+                    operationCalc.calculate(num);
+                }
             }
-            else if (choice == 6 || choice == 7) {
-                // Get user input for the calculation
-                System.out.print("Enter number: ");
-                long num = scanner.nextInt();
-
-                // Calculate and display result
-                operationCalc.calculate(num);
+            catch (InputMismatchException e) {
+                System.out.println("Invalid choice, please try again");
+                scanner.nextLine(); // Consumes the invalid input
+                continue;
             }
 
             // Deprecated method
