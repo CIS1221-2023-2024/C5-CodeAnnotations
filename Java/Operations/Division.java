@@ -9,7 +9,8 @@ public class Division extends Calculator {
 
         // Checks if the divisor is 0
         if (num2 == 0) {
-            throw new IllegalArgumentException("Divisor must not be 0.");
+            System.out.println("Divisor must not be 0, returning special value.");
+            return Double.NaN;
         }
         else {
             return num1 / num2;
