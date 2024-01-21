@@ -469,4 +469,284 @@ The `CalculatorMain` class presents a user-friendly menu featuring standard math
 ```
 
 After initializing x and y to be used for the inputs, the user is presented with all the possible functions to choose from. Regarding cumulative results, it will be tackled with the 'Operations' class [here](#operations-python)
+# Python
 
+### Introduction
+
+In my part of the Code Annotations project, I made a user-friendly calculator in Python. This calculator, wrapped in the `CalculatorMain` and `Operations` classes, covers essential math operations—addition, subtraction, multiplication, and more. I ensured it handles tricky situations gracefully, like preventing division by zero and offering clear messages for invalid inputs. For a real-world check, I put the calculator through a stress test, monitoring its CPU and memory usage. Additionally, I compared two methods for calculating factorials to find the most efficient approach. Essentially, my work brings a reliable and efficient Python calculator
+
+
+
+## Main Method 
+
+The `CalculatorMain` class presents a user-friendly menu featuring standard mathematical operations and a stress test. Beyond its interface display, it incorporates a robust error-handling system that provides clear explanations to users when errors occur.
+
+
+#### Code Snippet:
+
+```python
+    
+    def menu(self) -> None:
+        # Initialize x and y outside the loop to retain their values between iterations
+        x = 0
+        y = 0
+
+        while True:
+            print("\n--CALCULATOR--")
+            print("1. Add")
+            print("2. Subtract")
+            print("3. Multiply")
+            print("4. Divide")
+            print("5. Power")
+            print("6. Square Root")
+            print("7. Factorial")
+            print("8. Stress Test")
+            print("9. Exit")    # Program terminates and shows the cumulative result of other previous results
+
+```
+
+After initializing x and y to be used for the inputs, the user is presented with all the possible functions to choose from. Regarding cumulative results, it will be tackled with the `Operations` class [here](#operations-python).
+
+
+### Error Handling
+
+This class has a variety of error handling systems to allow the user to understand why the input provided is flawed. The first type are assertions, which checks if the condition give evaluates to `True`. If `False`, it triggers an exception such as: "AsserionError: <ErrorMessage>"
+
+
+#### Code Snippet:
+
+```python
+
+# Validate the user's input to ensure it's a valid choice
+            assert choice in ("1", "2", "3", "4", "5", "6", "7", "8", "9"), "Invalid choice"
+
+
+
+# Assertion for factorial input validation
+                    assert x_input.isdigit(), "Factorial input must be a non-negative integer"
+
+
+
+# Assertion for non-negative factorial input
+                    assert x >= 0, "Cannot calculate factorial of a negative number"
+
+```
+
+The snippet above contains the assertions available in the `CalculatorMain` class which assert certain inputs must be of a certain type/range
+
+
+#### Code Snippet:
+```python
+
+                    while True:
+                        try:
+                            x = float(input("Enter the first number: "))
+                            break  # If conversion is successful, exit the loop
+                        except ValueError:
+                            print("Invalid input. Please enter a valid number.")
+
+
+
+                    while True:
+                        try:
+                            y = float(input("Enter the second number: "))
+                            break  # If conversion is successful, exit the loop
+                        except ValueError:
+                            print("Invalid input. Please enter a valid number.")
+```
+
+The above handles errors related to the numbers needed to work out a calculation. If the user enters a letter or symbol instead of a number, An error pops up and the user is prompted to input the number again instead of terminating the program.
+
+
+
+Outputting the different methods found in the [`Operations`](#operations-python)
+#### Code Snippet:
+
+
+```python
+# Perform the selected operation based on the user's choice
+                if choice == "1":
+                    self.workings.add(x, y)
+                elif choice == "2":
+                    self.workings.sub(x, y)
+                elif choice == "3":
+                    self.workings.multi(x, y)
+                elif choice == "4":
+                    # Assertion to ensure non-zero divisor
+                    assert y != 0, "Cannot divide by zero!"
+                    self.workings.div(x, y)
+                elif choice == "5":
+                    self.workings.power(x, y)
+                elif choice == "6":
+                    # Can handle complex numbers i.e. √-x
+                    self.workings.sqrt(x, y)
+                elif choice == "7":
+                    # Assertion for non-negative factorial input
+                    assert x >= 0, "Cannot calculate factorial of a negative number"
+                    self.workings.RecursiveFac(x)
+                    self.workings.IterativeFac(x)
+
+            elif choice == "8":
+                # Perform the Stress Test and display cumulative results
+                self.stress_test()
+                print(f"Addition result: {self.workings.results['add']}")
+                print(f"Subtraction result: {self.workings.results['sub']}")
+                print(f"Multiplication result: {self.workings.results['multi']}")
+                print(f"Division result: {self.workings.results['div']}")
+
+        # Display the final result after all operations
+        print(f"Result: {self.workings.result}")
+
+
+```
+
+
+
+
+
+
+## Operations
+
+
+The `Operations` class was used to store different methods responsabile for working one of the operations available in the `CalculatorMain`: 
+
+#### Code Snippet: 
+
+```python
+    @log_time
+    @log_operation
+    def add(self, x, y):
+        self.result = x + y
+        self.results['add'] += self.result
+
+    @log_time
+    @log_operation
+    def sub(self, x, y):
+        self.result = x - y
+        self.results['sub'] += self.result
+
+    @log_time
+    @log_operation
+    def multi(self, x, y):
+        self.result = x * y
+        self.results['multi'] += self.result
+
+    @log_time
+    @log_operation
+    def div(self, x, y):
+        assert y != 0, "Cannot divide by zero!"
+        self.result = x / y
+        self.results['div'] += self.result
+
+    @log_time
+    @log_operation
+    def power(self, x, y):
+        self.result = x ** y
+        self.results['power'] += self.result
+
+    @log_time
+    @log_operation
+    def sqrt(self, x, y):
+        self.result = cmath.sqrt(x)
+        self.results['sqrt'] += self.result
+
+    @log_time
+    def IterativeFac(self, x):
+        start_time = time.time()
+        result = 1
+        for i in range(1, x + 1):
+            result *= i
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        self.result = result
+        print(f"Iterative Result: {result}")
+        print(f"Iterative Time: {elapsed_time:.10f}")
+
+    @log_time
+    def RecursiveFac(self, x):
+        start_time = time.time()
+
+        def recursive_helper(n):
+            if n == 0 or n == 1:
+                return 1
+            else:
+                return n * recursive_helper(n - 1)
+
+        result = recursive_helper(x)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        self.result = result
+        print(f"Recursive Result: {result}")
+        print(f"Recursive Time: {elapsed_time:.10f}")
+
+    def stress_test(self) -> None:
+        self.results = {'add': 0, 'sub': 0, 'multi': 0, 'div': 0}
+        start_time = time.time()
+        end_time = start_time + 10
+        random_gen = random.Random()
+        counter = 0
+
+        cpu_usage = []
+        memory_usage = []
+
+        while time.time() < end_time:
+            num1 = random_gen.uniform(0, 1000)
+            num2 = random_gen.uniform(0, 1000)
+
+            print("Random Number Stress Test:")
+            print(f"Generated numbers: {num1} and {num2}")
+
+            self.add(x=num1, y=num2)
+            self.sub(x=num1, y=num2)
+            self.multi(x=num1, y=num2)
+            self.div(x=num1, y=num2)
+
+            counter += 4
+
+            # Capture CPU and memory usage
+            cpu_usage.append(psutil.cpu_percent())
+            memory_usage.append(psutil.virtual_memory().percent)
+
+        print(f"Total number of calculations: {counter}")
+        real_end_time = time.time()
+        elapsed_time = real_end_time - start_time
+        print(f"Elapsed time: {elapsed_time:.4f} seconds")
+
+        # Calculate and display average CPU and memory usage
+        avg_cpu = sum(cpu_usage) / len(cpu_usage)
+        avg_memory = sum(memory_usage) / len(memory_usage)
+
+        print(f"Average CPU Usage: {avg_cpu}%")
+        print(f"Average Memory Usage: {avg_memory}%")
+```
+
+The `@log_operation` and `log_time` decorators are used to apply the following methods to each method found above
+
+
+#### Code Snippet:
+```python
+@staticmethod
+    def log_operation(func):
+        def wrapper(self, x, y):
+            result = func(self, x, y)
+            if func.__name__ != 'sqrt':
+                print(f"{func.__name__}: {x} and {y} = {self.result}")
+            else:
+                print(f"{func.__name__}: {x} = {self.result}")
+            return result
+        return wrapper
+
+    @staticmethod
+    def log_time(func):
+        def wrapper(self, *args, **kwargs):
+            start_time = time.time()
+            result = func(self, *args, **kwargs)
+            end_time = time.time()
+            elapsed_time = end_time - start_time
+            print(f"Time taken: {elapsed_time: .20f}")
+            return result  # Return the result
+
+        return wrapper
+```
+
+WorkInProgress
