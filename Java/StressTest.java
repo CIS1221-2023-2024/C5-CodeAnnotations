@@ -1,9 +1,11 @@
+import Calculator.*;
+import Operations.*;
 import java.lang.management.ManagementFactory;
 import com.sun.management.OperatingSystemMXBean;
 import java.lang.management.MemoryMXBean;
 
 class Stress {
-    void randomStressTest() {
+    public void randomStressTest() {
         // Setting the start time for the stress test
         long startTime = System.currentTimeMillis();
 
@@ -17,7 +19,7 @@ class Stress {
         double totalCpuUsage = 0.0;
         double totalMemoryUsage = 0.0;
 
-        // Get the OperatingSystemMXBean and MemoryMXBean
+        // Getting the OperatingSystemMXBean and MemoryMXBean
         OperatingSystemMXBean osBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
         MemoryMXBean memoryBean = ManagementFactory.getMemoryMXBean();
 
@@ -31,19 +33,19 @@ class Stress {
             double num2 = Math.random() * 1000;
 
             // Create instances of Calculator for different operations
-            Calculator AddOperation = new AddOperation();
-            Calculator SubtractOperation = new SubtractOperation();
-            Calculator MultiplyOperation = new MultiplyOperation();
-            Calculator DivideOperation = new DivideOperation();
+            Calculator add = new Addition();
+            Calculator sub = new Subtraction();
+            Calculator mul = new Multiplication();
+            Calculator div = new Division();
 
             // Calculate results
-            AddOperation.calculate(num1, num2);
-            SubtractOperation.calculate(num1, num2);
-            MultiplyOperation.calculate(num1, num2);
-            DivideOperation.calculate(num1, num2);
+            add.calculate(num1, num2);
+            sub.calculate(num1, num2);
+            mul.calculate(num1, num2);
+            div.calculate(num1, num2);
 
             // Update the calculation count
-            calculationCount += 4;
+            calculationCount += 1;
 
             // Addition of the CPU and memory usage
             totalCpuUsage += osBean.getSystemCpuLoad() * 100;
