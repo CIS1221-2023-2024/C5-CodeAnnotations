@@ -58,6 +58,6 @@ class Stress {
 
         System.out.println("Average CPU Usage: " + averageCpuUsage + "%");
         System.out.println("Average Memory Usage: " + averageMemoryUsage + " MB");
-        System.out.println("Total number of calculations: " + calculationCount);
+        System.out.println("Total number of calculations: " + calculationCount + "\n");
     }
 }
