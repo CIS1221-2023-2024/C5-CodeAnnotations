@@ -104,8 +104,32 @@ switch (choice) {
 ```
 
 ```java
-// Deprecated method
-operationCalc.deprecatedMethod();
+try {
+                if (choice >= 1 && choice <= 5) {
+                    // Get user input for the calculation
+                    System.out.print("Enter first number: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Enter second number: ");
+                    double num2 = scanner.nextDouble();
+
+                    // Calculate and display result
+                    double result = operationCalc.calculate(num1, num2);
+                    System.out.println("Result: " + result);
+                }
+                else if (choice == 6 || choice == 7) {
+                    // Get user input for the calculation
+                    System.out.print("Enter number: ");
+                    long num = scanner.nextInt();
+
+                    // Calculate and display result
+                    operationCalc.calculate(num);
+                }
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Invalid choice, please try again");
+                scanner.nextLine(); // Consumes the invalid input
+                continue;
+            }
 ```
 
 
