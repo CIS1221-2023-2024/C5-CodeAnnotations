@@ -37,7 +37,7 @@ class CalculatorMain {
                 choice = scanner.nextInt(); // Asks user for choice
             }
             catch (InputMismatchException e) {
-                System.out.println("Invalid choice, please try again");
+                System.out.println("Invalid choice, please try again.\n");
                 scanner.nextLine(); // Consumes the invalid input
                 continue;
             }
@@ -108,6 +108,7 @@ class CalculatorMain {
 
             // Deprecated method
             operationCalc.deprecatedMethod();
+            System.out.println();
         }
     }
 }
