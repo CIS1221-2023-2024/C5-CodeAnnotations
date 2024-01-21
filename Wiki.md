@@ -24,10 +24,10 @@ b. [Java](#introduction)
 
       
 c. [Python](#python)
-   1. [Introduction](#introduction-python)
-   2. [Main Method](#main-method-python)
-   3. [Operations](#operations-python)
-   4. [Runner](#runner-python)
+   1. [Introduction](#Intro)
+   2. [Main Class](#Main-Class)
+   3. [Operations](#Operations-CLass)
+   4. [Runner](#Runner-Class)
 
 
 
@@ -437,13 +437,13 @@ class Stress {
 
 # Python
 
-### Introduction
+### Intro
 
 In my part of the Code Annotations project, I made a user-friendly calculator in Python. This calculator, wrapped in the `CalculatorMain` and `Operations` classes, covers essential math operations—addition, subtraction, multiplication, and more. I ensured it handles tricky situations gracefully, like preventing division by zero and offering clear messages for invalid inputs. For a real-world check, I put the calculator through a stress test, monitoring its CPU and memory usage. Additionally, I compared two methods for calculating factorials to find the most efficient approach. Essentially, my work brings a reliable and efficient Python calculator
 
 
 
-### Main Method 
+### Main Class
 
 The `CalculatorMain` class presents a user-friendly menu featuring standard mathematical operations and a stress test. Beyond its interface display, it incorporates a robust error-handling system that provides clear explanations to users when errors occur.
 
@@ -467,53 +467,16 @@ The `CalculatorMain` class presents a user-friendly menu featuring standard math
             print("9. Exit")    # Program terminates and shows the cumulative result of other previous results
 
 ```
-
-After initializing x and y to be used for the inputs, the user is presented with all the possible functions to choose from. Regarding cumulative results, it will be tackled with the 'Operations' class [here](#operations-python)
-# Python
-
-### Introduction
-
-In my part of the Code Annotations project, I made a user-friendly calculator in Python. This calculator, wrapped in the `CalculatorMain` and `Operations` classes, covers essential math operations—addition, subtraction, multiplication, and more. I ensured it handles tricky situations gracefully, like preventing division by zero and offering clear messages for invalid inputs. For a real-world check, I put the calculator through a stress test, monitoring its CPU and memory usage. Additionally, I compared two methods for calculating factorials to find the most efficient approach. Essentially, my work brings a reliable and efficient Python calculator
-
-
-
-## Main Method 
-
-The `CalculatorMain` class presents a user-friendly menu featuring standard mathematical operations and a stress test. Beyond its interface display, it incorporates a robust error-handling system that provides clear explanations to users when errors occur.
-
-
-#### Code Snippet:
-
-```python
-    
-    def menu(self) -> None:
-        # Initialize x and y outside the loop to retain their values between iterations
-        x = 0
-        y = 0
-
-        while True:
-            print("\n--CALCULATOR--")
-            print("1. Add")
-            print("2. Subtract")
-            print("3. Multiply")
-            print("4. Divide")
-            print("5. Power")
-            print("6. Square Root")
-            print("7. Factorial")
-            print("8. Stress Test")
-            print("9. Exit")    # Program terminates and shows the cumulative result of other previous results
-
-```
-
 After initializing x and y to be used for the inputs, the user is presented with all the possible functions to choose from. Regarding cumulative results, it will be tackled with the `Operations` class [here](#operations-python).
 
 
 ### Error Handling
+#### Assertions
 
 This class has a variety of error handling systems to allow the user to understand why the input provided is flawed. The first type are assertions, which checks if the condition give evaluates to `True`. If `False`, it triggers an exception such as: "AsserionError: <ErrorMessage>"
 
 
-#### Code Snippet:
+##### Code Snippet:
 
 ```python
 
@@ -603,12 +566,11 @@ Outputting the different methods found in the [`Operations`](#operations-python)
 
 
 
-
-
 ## Operations
-
-
 The `Operations` class was used to store different methods responsabile for working one of the operations available in the `CalculatorMain`: 
+
+### Decorators
+In python, decorators are used to modify or extend the behaviours of functions or methods. They are applied using the `@decorator` syntax
 
 #### Code Snippet: 
 
@@ -720,7 +682,7 @@ The `Operations` class was used to store different methods responsabile for work
         print(f"Average Memory Usage: {avg_memory}%")
 ```
 
-The `@log_operation` and `log_time` decorators are used to apply the following methods to each method found above
+The `@log_operation` and `@log_time` decorators are used to apply the following methods to each method found above
 
 
 #### Code Snippet:
@@ -749,4 +711,56 @@ The `@log_operation` and `log_time` decorators are used to apply the following m
         return wrapper
 ```
 
-WorkInProgress
+
+`log_operation` is used to print the results of every function that calls it via the @log_operation
+`log_time` is used to measure the execution time for every operation, with a focus on comparing the performance of recursive and iterative factorial methods. It specifically aims to assess the efficiency of these methods when dealing with exceptionally large numbers, up to the factorial of 205,000.
+
+
+With the `@log_time` and `@log_operation` decorator being applied to each method, besides the mathematical operation being worked out, it also activates the methods `log_time` `log_operation`.
+
+
+### Recursive and Iterative Factorial Calculation
+
+```python
+@log_time
+    def IterativeFac(self, x):
+        start_time = time.time()
+        result = 1
+        for i in range(1, x + 1):
+            result *= i
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        self.result = result
+        print(f"Iterative Result: {result}")
+        print(f"Iterative Time: {elapsed_time:.10f}")
+
+    @log_time
+    def RecursiveFac(self, x):
+        start_time = time.time()
+
+        def recursive_helper(n):
+            if n == 0 or n == 1:
+                return 1
+            else:
+                return n * recursive_helper(n - 1)
+
+        result = recursive_helper(x)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        self.result = result
+        print(f"Recursive Result: {result}")
+        print(f"Recursive Time: {elapsed_time:.10f}")
+
+```
+
+
+
+
+
+
+
+### Stress Test
+
+The random stress test is designed to evaluate the performance and resource utilization of the calculator operations under simulated high-stress conditions. During a 10-second interval, the stress test generates random pairs of numbers in the range [0, 1000) and applies four fundamental arithmetic operations (Addition, Subtraction, Multiplication and Division) on these pairs. The results of each operation are accumulated, providing a cumulative summary of addition, subtraction, multiplication, and division. Additionally, the stress test reports the total number of calculations conducted within the 10-second timeframe. The test monitors and prints average CPU and memory usage, offering insights into the computational efficiency and resource consumption of the calculator operations during stress scenarios.
+
+
