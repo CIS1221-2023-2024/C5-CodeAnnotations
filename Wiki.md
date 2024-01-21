@@ -7,6 +7,7 @@ Welcome to the documentation for the **Code Annotations** project. This project 
 ## Table of Contents
 
 a. [Introduction](#introduction)
+
 b. [Java](#introduction)
    1. [Main method](#main-method)
    2. [Abstract class](#abstract-class)
@@ -19,6 +20,8 @@ b. [Java](#introduction)
       - [SquareRootOperation Class](#squarerootoperation-class)
       - [FactorialOperation Class](#factorialoperation-class)
    4. [Stress class](#stress-class)
+      
+c. [Python](#python)
 
 
 
@@ -372,3 +375,7 @@ class Stress {
     }
 }
 ```
+
+
+
+# Python
