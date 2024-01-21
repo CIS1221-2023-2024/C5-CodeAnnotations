@@ -132,6 +132,10 @@ catch (InputMismatchException e) {
 }
 ```
 
+```java
+@SuppressWarnings("deprecation") // Used to remove the deprecation warning
+```
+
 
 
 ## Abstract class
