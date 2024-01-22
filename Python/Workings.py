@@ -4,6 +4,7 @@ import random  # For stress test number generation
 import sys  # To increase recursion limit
 import psutil  # To monitor system performance during stress test
 
+
 sys.setrecursionlimit(1000000)  # Allows recursion to work on higher numbers [for factorial]
 sys.set_int_max_str_digits(1000000)  # increasing the limit for converting between int and str
 
@@ -79,7 +80,6 @@ class Operations:
         self.result = cmath.sqrt(x)
         self.results['sqrt'] += self.result
 
-    @log_time
     def IterativeFac(self, x):
         start_time = time.time()
         result = 1
@@ -89,9 +89,8 @@ class Operations:
         elapsed_time = end_time - start_time
         self.result = result
         print(f"Iterative Result: {result}")
-        print(f"Iterative Time: {elapsed_time:.10f}")
+        print(f"Iterative Time: {elapsed_time:.20f}")
 
-    @log_time
     def RecursiveFac(self, x):
         start_time = time.time()
 
@@ -106,7 +105,7 @@ class Operations:
         elapsed_time = end_time - start_time
         self.result = result
         print(f"Recursive Result: {result}")
-        print(f"Recursive Time: {elapsed_time:.10f}")
+        print(f"Recursive Time: {elapsed_time:.20f}")
 
     def stress_test(self) -> None:
         self.results = {'add': 0, 'sub': 0, 'multi': 0, 'div': 0}
