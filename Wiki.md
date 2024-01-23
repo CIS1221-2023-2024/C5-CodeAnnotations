@@ -303,7 +303,7 @@ public class SquareRoot extends Calculator {
 
 ### Factorial Class
 
-The `Factorial` class extends the `Calculator` abstract class and provides the implementation for factorial operations. In the factorial class, a comparison is being made by running the same calculation using recursion and iteration. For each execution, the time is measured to compare which method is more efficient. Assertion is also used to check if the variable n is less than 0. If n is less than 0 an AssertionError will be raised with the message "Number must be greater or equal to 0."
+The `Factorial` class extends the `Calculator` abstract class and provides the implementation for factorial operations. In the factorial class, a comparison is being made by running the same calculation using recursion and iteration. For each execution, the time is measured to compare which method is more efficient. Calculating the factorial iteritavely proved to be more efficient. Assertion is also used to check if the variable n is less than 0. If n is less than 0 an AssertionError and an illegal argument exception will be raised with the message "Number must be greater or equal to 0."
 
 #### Code Snippet
 
