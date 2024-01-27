@@ -33,32 +33,38 @@ class FactorialGenerator:
     def calculate_iterative_factorials(self, numbers):
         times = []
         results = []
+        total_elapsed_time = 0
 
         for num in numbers:
             start_time = time.time()
             result = self.iterative_factorial(num)
             end_time = time.time()
             elapsed_time = end_time - start_time
+            total_elapsed_time += elapsed_time
 
             times.append(elapsed_time)
             results.append(result)
 
         self.plot_graph(numbers, times, 'Iterative Factorial Calculation Time')
+        print(f"Iterative Time Total: {total_elapsed_time}")
 
     def calculate_recursive_factorials(self, numbers):
         times = []
         results = []
+        total_elapsed_time = 0
 
         for num in numbers:
             start_time = time.time()
             result = self.recursive_factorial(num)
             end_time = time.time()
             elapsed_time = end_time - start_time
+            total_elapsed_time += elapsed_time
 
             times.append(elapsed_time)
             results.append(result)
 
         self.plot_graph(numbers, times, 'Recursive Factorial Calculation Time')
+        print(f"Recursive Time Total: {total_elapsed_time}")
 
     @staticmethod
     def plot_graph(x_values, y_values, title):
