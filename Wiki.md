@@ -28,7 +28,7 @@ c. [Python](#python)
    2. [Main Class](#Main-Class)
    3. [Operations](#Operations)
    4. [Factorial Statistics](#Factorial-Statistics)
-   5. [Runner](#Runner-Class)
+   5. [Runner](#Runner)
 
 
 
