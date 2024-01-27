@@ -786,13 +786,13 @@ Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz   1.19 GHz
 
 ### Iterative Method
 Graph: 
-<img width="670" alt="Screenshot 2024-01-27 163031" src="https://github.com/CIS1221-2023-2024/C5-CodeAnnotations/assets/150332534/1a49ddd3-160a-4fd0-8efa-ee19f0274759">
+#### <img width="670" alt="Screenshot 2024-01-27 163031" src="https://github.com/CIS1221-2023-2024/C5-CodeAnnotations/assets/150332534/1a49ddd3-160a-4fd0-8efa-ee19f0274759">
 
 Total time taken: 253.45079231262207
 
 ### Recursive Method
 Graph: 
-<img width="663" alt="Screenshot 2024-01-27 163827" src="https://github.com/CIS1221-2023-2024/C5-CodeAnnotations/assets/150332534/78fc5a0a-80d7-487e-9c13-0e5e9616f4a1">
+#### <img width="663" alt="Screenshot 2024-01-27 163827" src="https://github.com/CIS1221-2023-2024/C5-CodeAnnotations/assets/150332534/78fc5a0a-80d7-487e-9c13-0e5e9616f4a1">
 
 Total time taken: 191.62772417068481
 
