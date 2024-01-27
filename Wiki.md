@@ -568,7 +568,7 @@ Outputting the different methods found in the `Operations`
 
 
 ## Operations
-The `Operations` class was used to store different methods responsabile for working one of the operations available in the `CalculatorMain`: 
+The `Operations` class was used to store different methods responsibile for working one of the operations available in the `CalculatorMain`: 
 
 ### Decorators []
 In python, decorators are used to modify or extend the behaviours of functions or methods. They are applied using the `@decorator` syntax
