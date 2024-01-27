@@ -27,7 +27,8 @@ c. [Python](#python)
    1. [Introduction](#Intro)
    2. [Main Class](#Main-Class)
    3. [Operations](#Operations)
-   4. [Runner](#Runner-Class)
+   4. [Factorial Statistics](#Factorial-Statistics)
+   5. [Runner](#Runner-Class)
 
 
 
@@ -467,7 +468,7 @@ The `CalculatorMain` class presents a user-friendly menu featuring standard math
             print("9. Exit")    # Program terminates and shows the cumulative result of other previous results
 
 ```
-After initializing x and y to be used for the inputs, the user is presented with all the possible functions to choose from. Regarding cumulative results, it will be tackled with the `Operations` class [here](#operations-python).
+After initializing x and y to be used for the inputs, the user is presented with all the possible functions to choose from. Regarding cumulative results, it will be tackled with the `Operations` class [here](#Operations).
 
 
 ### Error Handling
@@ -522,7 +523,7 @@ The above handles errors related to the numbers needed to work out a calculation
 
 
 
-Outputting the different methods found in the [`Operations`](#operations-python)
+Outputting the different methods found in the `Operations`
 #### Code Snippet:
 
 
@@ -569,7 +570,7 @@ Outputting the different methods found in the [`Operations`](#operations-python)
 ## Operations
 The `Operations` class was used to store different methods responsabile for working one of the operations available in the `CalculatorMain`: 
 
-### Decorators
+### Decorators []
 In python, decorators are used to modify or extend the behaviours of functions or methods. They are applied using the `@decorator` syntax
 
 #### Code Snippet: 
@@ -641,6 +642,15 @@ In python, decorators are used to modify or extend the behaviours of functions o
         print(f"Recursive Result: {result}")
         print(f"Recursive Time: {elapsed_time:.10f}")
 
+```
+
+The `@log_operation` and `@log_time` decorators are used to apply the following methods to each method found above
+
+### Stress Test
+
+The random stress test is designed to evaluate the performance and resource utilization of the calculator operations under simulated high-stress conditions. During a 10-second interval, the stress test generates random pairs of numbers in the range [0, 1000) and applies four fundamental arithmetic operations (Addition, Subtraction, Multiplication and Division) on these pairs. The results of each operation are accumulated, providing a cumulative summary of addition, subtraction, multiplication, and division. Additionally, the stress test reports the total number of calculations conducted within the 10-second timeframe. The test monitors and prints average CPU and memory usage, offering insights into the computational efficiency and resource consumption of the calculator operations during stress scenarios.
+
+```python
     def stress_test(self) -> None:
         self.results = {'add': 0, 'sub': 0, 'multi': 0, 'div': 0}
         start_time = time.time()
@@ -682,8 +692,6 @@ In python, decorators are used to modify or extend the behaviours of functions o
         print(f"Average Memory Usage: {avg_memory}%")
 ```
 
-The `@log_operation` and `@log_time` decorators are used to apply the following methods to each method found above
-
 
 #### Code Snippet:
 ```python
@@ -720,7 +728,7 @@ The `@log_operation` and `@log_time` decorators are used to apply the following 
 With the `@log_time` and `@log_operation` decorator being applied to each method, besides the mathematical operation being worked out, it also activates the methods `log_time` `log_operation`.
 
 
-### Recursive and Iterative Factorial Calculation
+## Recursive and Iterative Factorial Calculation
 
 ```python
 @log_time
@@ -754,16 +762,37 @@ With the `@log_time` and `@log_operation` decorator being applied to each method
 
 ```
 
+## Factorial Statistics
 
-Using MatPlotLib, a graph was made to visualize the time taken against increasingly bigger numbers by both methods.
-Iterative Graph can be found here: 
-Recursive Graph can be found here: 
+This class was created to help visualize the amount taken between different numbers, large and small. The user can set the range of numbers to be taken 1 - 205,000 and the program chooses 50 random numbers within the range and performs the factorial using both the iterative and recursive approach. Once done, a graph displaying the number generated and the time taken is generated for both methods. The program also outputs the total time taken for each method.
 
+### Code Snippet:
 
+```python
+@staticmethod
+    def plot_graph(x_values, y_values, title):
+        plt.figure(figsize=(10, 5))
+        plt.plot(x_values, y_values, marker='o', linestyle='-', color='b')
+        plt.xlabel('Number')
+        plt.ylabel('Time (seconds)')
+        plt.title(title)
+        plt.grid(True)
+        plt.show()
+```
+This code snippet defines a method to be used from both the iterative and recursive methods to plot the graph. This was done using MatPlotLib. 
 
-### Stress Test
+A test was carried out using 50 numbers from the range 0 - 150,000. These were the results on an
+Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz   1.19 GHz
 
-The random stress test is designed to evaluate the performance and resource utilization of the calculator operations under simulated high-stress conditions. During a 10-second interval, the stress test generates random pairs of numbers in the range [0, 1000) and applies four fundamental arithmetic operations (Addition, Subtraction, Multiplication and Division) on these pairs. The results of each operation are accumulated, providing a cumulative summary of addition, subtraction, multiplication, and division. Additionally, the stress test reports the total number of calculations conducted within the 10-second timeframe. The test monitors and prints average CPU and memory usage, offering insights into the computational efficiency and resource consumption of the calculator operations during stress scenarios.
+### Iterative Method
+Graph: <img width="670" alt="Screenshot 2024-01-27 163031" src="https://github.com/CIS1221-2023-2024/C5-CodeAnnotations/assets/150332534/1a49ddd3-160a-4fd0-8efa-ee19f0274759">
+
+Total time taken: 253.45079231262207
+
+### Recursive Method
+Graph: <img width="663" alt="Screenshot 2024-01-27 163827" src="https://github.com/CIS1221-2023-2024/C5-CodeAnnotations/assets/150332534/78fc5a0a-80d7-487e-9c13-0e5e9616f4a1">
+
+Total time taken: 191.62772417068481
 
 
 
