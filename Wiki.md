@@ -255,7 +255,7 @@ public class Division extends Calculator {
 
 ### Power Class
 
-The `Power` class extends the `Calculator` abstract class and provides the implementation for power operations.
+The `Power` class extends the `Calculator` abstract class and provides the implementation for power operations. The java standard library for the power operation is used.
 
 #### Code Snippet
 
@@ -274,7 +274,7 @@ public class Power extends Calculator {
 
 ### SquareRoot Class
 
-The `SquareRoot` class extends the `Calculator` abstract class and provides the implementation for square root operations. Through the use of the assert statement and if statement the variable num2 is checked to see whether it is a negative number. If num2 is negative, "Cannot calculate the square root of a negative number" will be displayed.
+The `SquareRoot` class extends the `Calculator` abstract class and provides the implementation for square root operations. Through the use of the assert statement and if statement the variable num2 is checked to see whether it is a negative number. If num2 is negative, "Cannot calculate the square root of a negative number" will be displayed. The java standard library for the squareroot operation is used.
 
 #### Code Snippet
 
