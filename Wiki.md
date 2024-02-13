@@ -167,7 +167,7 @@ abstract public class Calculator {
 ## Operations package
 In all classes under this package, empty methods can be found since all abstract methods needs to be overidden in each class.
 
-### Adddition Class
+### Addition Class
 
 The `Addition` class extends the `Calculator` abstract class and provides the implementation for addition operations.
 
