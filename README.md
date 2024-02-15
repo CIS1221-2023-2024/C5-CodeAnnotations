@@ -34,9 +34,6 @@ Assertions are statements that assert or guarantee a condition to be true at a p
 
 ## Considerations
 
-### Computational Complexity
-We will discuss the computational complexity of the calculator implementations, analysing the efficiency of the algorithms used for the factorial operation.
-
 ### Execution Time
 Benchmarking and profiling will be performed to measure and compare the execution time of the Java and Python calculator implementations.
 
